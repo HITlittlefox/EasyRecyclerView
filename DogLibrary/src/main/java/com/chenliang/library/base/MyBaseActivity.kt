@@ -23,10 +23,12 @@ open abstract class MyBaseActivity<Binding : ViewDataBinding, VModel : ViewModel
         binding = DataBindingUtil.setContentView<Binding>(this, layoutId())
         viewModel = createViewModel(initViewModelClass())
         initCreate()
+        initView()
     }
 
     abstract fun layoutId(): Int
     abstract fun initCreate()
+    abstract fun initView()
     abstract fun initViewModelClass(): Class<VModel>
 
 

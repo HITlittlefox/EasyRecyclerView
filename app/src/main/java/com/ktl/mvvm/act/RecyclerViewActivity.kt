@@ -5,6 +5,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.chenliang.library.base.MyBaseActivity
 import com.ktl.mvvm.R
+import com.ktl.mvvm.ai.Utils.LogUtils.Companion.LogInObservable
+import com.ktl.mvvm.ai.client.PaginationManager
+import com.ktl.mvvm.ai.service.NetworkService
 import com.ktl.mvvm.databinding.*
 import com.ktl.mvvm.model.Product
 import com.ktl.mvvm.viewmodel.PruductListViewModel
@@ -12,6 +15,7 @@ import com.ktl.mvvm.viewmodel.n
 import com.ktl.mvvm.viewmodel.obs
 import com.ktl.mvvm.viewmodel.y
 import kotlinx.android.synthetic.main.activity_recycleview.*
+import kotlin.time.Duration
 
 class RecyclerViewActivity : MyBaseActivity<ActivityRecycleviewBinding, PruductListViewModel>() {
 
@@ -42,6 +46,27 @@ class RecyclerViewActivity : MyBaseActivity<ActivityRecycleviewBinding, PruductL
 
         refresh.loadData { httpGetData() }
 
+    }
+
+    override fun initView() {
+        binding.button1.setOnClickListener {
+            Toast.makeText(this,"what button",Toast.LENGTH_SHORT).show()
+
+
+            // 此处应该放在repo或者viewmodel
+            val networkService = NetworkService()  // 这里是模拟的网络服务
+            val paginationManager = PaginationManager(networkService)
+
+            paginationManager.fetchPageRecursively(currentPage = 1, pageSize = 20)
+                .subscribe(
+                    { allItems ->
+                        LogInObservable("All items fetched successfully: $allItems")
+                    },
+                    { error ->
+                        LogInObservable("Error: ${error.message}")
+                    }
+                )
+        }
     }
 
     private fun httpGetData() {
