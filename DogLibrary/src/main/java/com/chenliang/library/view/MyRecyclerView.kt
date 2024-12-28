@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.chenliang.library.R
 import com.chenliang.library.adapter.MyRecyclerViewModel
 import com.chenliang.library.adapter.MyRvAdapter
@@ -64,7 +65,7 @@ class MyRecyclerView : RecyclerView {
     ) {
 
         if (layoutManager == null)
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.HORIZONTAL)
         if (layoutIds.isEmpty())
             layoutIds[31415926] = layoutId
         listAdapter = MyRvAdapter<D>(context, layoutIds,func)

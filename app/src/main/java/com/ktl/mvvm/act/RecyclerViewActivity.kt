@@ -2,6 +2,7 @@ package com.ktl.mvvm.act
 
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.chenliang.library.base.MyBaseActivity
 import com.ktl.mvvm.R
 import com.ktl.mvvm.databinding.*
