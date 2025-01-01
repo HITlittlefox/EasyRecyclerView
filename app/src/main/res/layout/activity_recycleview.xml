@@ -13,6 +13,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/button_snackbar"
+            android:text="test button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button_snackbar_top"
+            android:text="test button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <com.chenliang.library.view.MyRefreshRecyclerView
             android:id="@+id/refresh"
             android:layout_width="match_parent"

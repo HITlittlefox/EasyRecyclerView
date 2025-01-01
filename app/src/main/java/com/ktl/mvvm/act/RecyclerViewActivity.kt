@@ -8,6 +8,7 @@ import com.ktl.mvvm.R
 import com.ktl.mvvm.ai.Utils.LogUtils.Companion.LogInObservable
 import com.ktl.mvvm.ai.client.PaginationManager
 import com.ktl.mvvm.ai.service.NetworkService
+import com.ktl.mvvm.customedsnackbar.TopSnackbar
 import com.ktl.mvvm.databinding.*
 import com.ktl.mvvm.model.Product
 import com.ktl.mvvm.viewmodel.PruductListViewModel
@@ -67,6 +68,35 @@ class RecyclerViewActivity : MyBaseActivity<ActivityRecycleviewBinding, PruductL
                     }
                 )
         }
+
+        initButtonSnackbar()
+    }
+
+    private fun initButtonSnackbar() {
+        binding.buttonSnackbar.setOnClickListener {
+            // 显示在屏幕顶部
+            TopSnackbar.show(this, "This is a title", R.drawable.ic_launcher_foreground, "Action") {
+                Toast.makeText(this, "Button clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.buttonSnackbarTop.setOnClickListener {
+            TopSnackbar.showAboveView(
+                this,
+                binding.buttonSnackbarTop,
+                "This is a title",
+                R.drawable.ic_launcher_foreground,
+                "Action"
+            ) {
+                Toast.makeText(this, "Button clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+//        binding.button1.setOnClickListener(::onSnackbarButtonClick)
+    }
+
+    // 方法定义
+    private fun onSnackbarButtonClick(view: View) {
+        // 处理点击事件
+        println("Button clicked!")
     }
 
     private fun httpGetData() {
