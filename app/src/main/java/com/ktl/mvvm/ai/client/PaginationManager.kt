@@ -12,7 +12,7 @@ class PaginationManager(
 
     private val allItems = mutableListOf<String>() // 用于保存所有获取的数据
 
-    // 优化后的递归分页请求函数：fetchPageRecursively
+    //  TODO 优化后的递归分页请求函数：fetchPageRecursively
     fun fetchPageRecursively(currentPage: Int = 1, pageSize: Int = 20): Observable<List<String>> {
         return networkService.fetchFromServer(PaginationRequest(currentPage, pageSize))
             .flatMap { response ->
