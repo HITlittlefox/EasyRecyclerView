@@ -3,6 +3,7 @@ package com.ktl.mvvm.act
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.ada.popuphelper.CenteredPopupHelper
 import com.chenliang.library.base.MyBaseActivity
 import com.ktl.mvvm.R
 import com.ktl.mvvm.ai.Utils.LogUtils.Companion.LogInObservable
@@ -75,6 +76,26 @@ class RecyclerViewActivity : MyBaseActivity<ActivityRecycleviewBinding, PruductL
     }
 
     private fun initButtonPopupwindow() {
+        CenteredPopupHelper.attachToLongClick(
+            targetView = binding.buttonPopupwindow,
+            context = this,
+            title = "1主标题：测试一下2",
+            subtitle = "3副标题：这里是非常非常长的内容，可以上下滚动的哦4"
+        )
+
+        CenteredPopupHelper.attachToLongClick(
+            targetView = binding.buttonPopupwindowLong,
+            context = this,
+            title = "1主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下主标题：测试一下2",
+            subtitle = "3副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦副标题：这里是非常非常长的内容，可以上下滚动的哦4"
+        )
+
+        CenteredPopupHelper.attachToLongClick(
+            targetView = binding.buttonPopupwindowShort,
+            context = this,
+            title = "12",
+            subtitle = "34"
+        )
 
     }
 

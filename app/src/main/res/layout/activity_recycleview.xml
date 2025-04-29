@@ -10,10 +10,21 @@
 
         <Button
             android:id="@+id/button_popupwindow"
-            android:text="button_popupwindow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="button_popupwindow" />
 
+        <Button
+            android:id="@+id/button_popupwindow_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="button_popupwindow_long" />
+
+        <Button
+            android:id="@+id/button_popupwindow_short"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="button_popupwindow_short" />
 
         <Button
             android:id="@+id/button1"
