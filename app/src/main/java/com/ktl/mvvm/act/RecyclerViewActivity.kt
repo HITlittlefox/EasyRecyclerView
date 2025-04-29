@@ -70,6 +70,12 @@ class RecyclerViewActivity : MyBaseActivity<ActivityRecycleviewBinding, PruductL
         }
 
         initButtonSnackbar()
+
+        initButtonPopupwindow()
+    }
+
+    private fun initButtonPopupwindow() {
+
     }
 
     private fun initButtonSnackbar() {
