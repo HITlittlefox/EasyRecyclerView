@@ -28,21 +28,46 @@
 
         <Button
             android:id="@+id/button1"
-            android:text="test button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="test button" />
 
         <Button
             android:id="@+id/button_snackbar"
-            android:text="test button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="test button" />
 
         <Button
             android:id="@+id/button_snackbar_top"
-            android:text="test button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="test button" />
+
+        <!-- 整段可点击 -->
+        <TextView
+            android:id="@+id/tv_full_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="跳转 App 内部（整段）"
+            android:textSize="18sp" />
+
+        <!-- 部分可点击 -->
+        <TextView
+            android:id="@+id/tv_partial_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+        <!-- 跳转 WebView -->
+        <TextView
+            android:id="@+id/tv_webview_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="18sp" />
 
         <com.chenliang.library.view.MyRefreshRecyclerView
             android:id="@+id/refresh"
@@ -51,8 +76,7 @@
             android:layout_weight="1"
             app:my_empty_layout="@layout/layout_empty"
             app:my_item_layout="@layout/item_product_0"
-            app:my_top_enable="true"
-            />
+            app:my_top_enable="true" />
 
     </LinearLayout>
 
